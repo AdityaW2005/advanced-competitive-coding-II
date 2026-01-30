@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 class List {
     Node head = null;
@@ -26,26 +26,6 @@ class List {
         }
     }
 
-    boolean create(int a, int b) {
-        int c = 0;
-        Node p1 = head;
-        Node p2 = head;
-        while (p1.data != a || c != b) {
-            if (p1.data != a) {
-                p1 = p1.next;
-                if (p1.next == null)
-                    return false;
-            }
-
-            if (c != b) {
-                p2 = p2.next;
-                ++c;
-            }
-        }
-        p2.next = p1;
-        return true;
-    }
-
     boolean detect() {
         Node fast = head;
         Node slow = head;
@@ -59,9 +39,28 @@ class List {
             return false;
         return false;
     }
+
+    boolean create(int a, int b) {
+        int c = 0;
+        Node p1 = head;
+        Node p2 = head;
+        while (p1.data != a || c != b) {
+            if (p1.data != a) {
+                p1 = p1.next;
+                if (p1.next == null)
+                    return false;
+            }
+            if (c != b) {
+                p2 = p2.next;
+                ++c;
+            }
+        }
+        p2.next = p1;
+        return true;
+    }
 }
 
-public class LoopDetection {
+public class practice {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -75,6 +74,3 @@ public class LoopDetection {
         sc.close();
     }
 }
-
-// Time Complexity: O(n ^ 2)
-// Space Complexity: O(n)
