@@ -20,12 +20,13 @@ public class StackPermutations {
 
             if (ele == q2.peek()) {
                 q2.poll();
-
                 while (!st.isEmpty() && st.peek() == q2.peek()) {
                     st.pop();
                     q2.poll();
                 }
-            } else {
+            }
+
+            else {
                 st.push(ele);
             }
         }
