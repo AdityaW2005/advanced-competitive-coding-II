@@ -56,8 +56,8 @@ class List {
                     oe.next = curr;
                     oe = curr;
                 }
-
             }
+
             curr = curr.next;
         }
 
