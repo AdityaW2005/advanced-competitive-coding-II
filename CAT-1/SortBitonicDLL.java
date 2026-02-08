@@ -43,6 +43,7 @@ class List {
         Node last = head;
         Node res = null;
         Node resend = null;
+
         while (last.next != null)
             last = last.next;
 
