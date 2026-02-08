@@ -55,9 +55,12 @@ public class PriorityQueueUsingDLL {
     static void display() {
         Node curr = front;
         while (curr != null) {
-            System.out.println(curr.data + " " + curr.pr);
+            System.out.print("(" + curr.data + ", p=" + curr.pr + ")");
+            if (curr.next != null)
+                System.out.print(" -> ");
             curr = curr.next;
         }
+        System.out.println();
     }
 
     public static void main(String args[]) {
